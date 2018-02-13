@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<!--     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "{{ site.adsid }}",
+        enable_page_level_ads: true
+      });
+    </script> -->
+
+    <title>{{ site.name }} - {% if page.title %} {{ page.title }} {% else %} {{ site.description}} {% endif %}</title>
+    <meta name="description" content="{{ site.description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %} -powered by www.cyobb.com" />
+    <meta property="og:description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}" />
+    <meta property="og:image" content="http://imgh.us/home_11.jpg" />
+
+    <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="{{ site.url }}/assets/css/main.css" />
+    <link rel="shortcut icon" type="image/ico" href="{{ site.url }}/favicon.ico"/>
+
+</head>
+<body class="{% if page.post_class %}{{page.post_class}}{% else %}home-template{% endif %}">
+
+    {{ content }}
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <a href="{{ site.url }}">{{ site.name }}</a> &copy;
+              {{site.date}} &bull; All rights reserved.
+      </section>
+      <section class="poweredby">Powered by www.cyobb.com
+        <a href="http://www.cyobb.com">Create your own beautiful blog.</a>
+      </section>
+    </footer>
+
+    <script type="text/javascript" src="{{ site.url }}/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="{{ site.url }}/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="{{ site.url }}/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', '{{ site.google_analytics }}', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+        <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+
+</body>
+</html>

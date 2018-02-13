@@ -1,0 +1,44 @@
+<%= simple_form_for(@post) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <% if @post.new_record? %>
+       <%= f.input :name, autofocus: true, required: true %>
+    <% else %>
+       <%= f.input :name %>
+    <% end %>
+
+    <%= f.input :content, as: :text   %>
+    <p class="help-block">
+      <a href="/pages/learn_more/#question-what-is-markdown-editor-how-to-use-it-" target="_blank">More info about editor</a>
+    </p>
+
+    <div>Mark this post work in progress, If marked it will not be published until unmarked.</div>
+    <label class="switch">
+      <%= f.check_box :mark_work_in_progress %>
+      <span class="slider round"></span>
+    </label>
+
+  </div>
+
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+
+
+<% end %>
+<script>
+  var simplemde;
+  setTimeout(function(){
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+     // some code..
+   }else{
+     if (simplemde){
+       location.reload()
+     }else{
+       simplemde = new SimpleMDE();
+     }
+   }
+  }, 300);
+</script>

@@ -1,0 +1,57 @@
+<h4 id="question-how-do-i-use-custom-url-for-my-blog-">Question: How do i use custom url for my blog?</h3>
+<p>Answer:</p>
+<ul>
+<li> First you need to buy a url name from <a href="http://godaddy.com">godaddy</a>. Say you bought xyz.com.</li>
+<li> Then you need to update xyz.com( your custom url) in <a href="/update_blog">update blog details</a> page.</li>
+<li> In last step you need to set a A record on godaddy pointing to IP 151.101.60.133. Domain setting may take upto 5 min to reflect. </li>
+<p class="help-block">
+  How to setup  <a href="https://in.godaddy.com/help/add-an-a-record-19238">A record</a>
+</p>
+</ul>
+<hr>
+<h4 id="question-what-happens-when-i-create-account-">Question: What happens when i create account?</h4>
+<p>Answer: When you create a new account by giving a username and password, we make a new blog and publish it on cyobb.com/username. It has all the default values and options which you can then modify by going to <a href="/update_blog">update blog details</a> page.</p>
+<hr>
+<h4 id="question-why-don-t-automatically-publish-changes-">Question: Why don't automatically publish changes?</h4>
+<p>Answer: When creating and editing posts user's tend to create drafts. So we don't publish changes automatically and let you decide when you are ready with new stuff.</p>
+<hr>
+<h4 id="question-i-am-continuously-getting-publish-failed-publish-again-">Question: I am continuously getting publish failed, publish again?</h4>
+<p>Answer: Some times due to load or technical issues publish changes fails. In these scenarios please wait 5 to 10 minutes before publishing again or contact us at rajatrs5054@gmail.com.</p>
+<hr>
+<h4 id="question-how-many-themes-are-there-on-cyobb-">Question: How many themes are there on cyobb?</h4>
+<div class="panel panel-default">
+   <div class="panel-heading">
+      All available themes
+   </div>
+  <div class="panel-body">
+    <% all_themes().each do |i| %>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+          <div class="hovereffect">
+              <%= image_tag(i[:image], class: "img-responsive") %>
+                  <div class="overlay">
+                      <h2><%= i[:name] %></h2>
+              <p>
+                <a href="<%= i[:link] %>">Preview</a>
+              </p>
+                  </div>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<p class="help-block">More themes coming soon.</p>
+<hr>
+<h4 id="question-how-to-track-visitors-on-my-blog-by-google-analytics-">Question: How to track visitors on my blog by google analytics?</h4>
+<p>Answer: Get google analytics tracking id <a href="https://analytics.google.com/analytics/web/">here</a> . Then add this id in <a href="/update_blog">update blog details</a> page under google analytics.</p>
+<hr>
+<h4 id="question-changes-i-can-make-on-update-blog-details-page-">Question: Changes i can make on <a href="/update_blog">update blog details</a> page?</h4>
+<p>Answer: You can set custom url, you can edit description, title, about, email, twitter id, author name, cover photo, author image, Change theme , add google analytics id.</p>
+<hr>
+<h4 id="question-can-i-change-my-username-">Question: Can i change my username?</h4>
+<p>Answer: No, you can't change your username, Please create a new accout with new username and copy paste all your previous posts.</p>
+<hr>
+<h4 id="question-what-is-markdown-editor-how-to-use-it-">Question: What is markdown editor, How to use it?</h4>
+<p>Answer: Markdown is a text-to-HTML conversion tool for web writers. Markdown allows you to write using an easy-to-read, easy-to-write plain text format.  It's very easy to learn, checkout <a href="https://simplemde.com/markdown-guide">this guide</a>. For uploading images use <a href="https://imgh.us/">this</a>, you can upload images here and it will give you a link to that image, which you can use in your post.</p>
+<hr>
+<h4 id="question-how-to-upload-images-in-posts-and-for-cover-photo-and-for-author-image-">Question: How to upload images in posts and for cover photo and for author image?</h4>
+<p>Answer: For uploading images use <a href="https://imgh.us/">this</a>, you can upload images here and it will give you a link to that image, which you can use in your post, for cover image and author image in <a href="/update_blog">update blog details</a> page.</p>

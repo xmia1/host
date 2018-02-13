@@ -1,0 +1,104 @@
+<%= simple_form_for(@blog) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name, disabled: true %>
+    <p class="help-block">You can't change
+      <a target="_blank" href="/pages/learn_more/#question-can-i-change-my-username-">
+        name</a>
+    </p>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :title,hint: 'Title for your blog.' %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :author_name %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :url %>
+    <p class="text-danger">
+      <font color='grey'>Use your own custom url.</font> Don't change this before
+      <a target="_blank" href="/pages/learn_more/#question-how-do-i-use-custom-url-for-my-blog-">reading how guide.</a>
+      <br>
+      <a id="reset_url" href="#">reset url</a>
+    </p>
+  </div>
+  <script>
+  $(function() {
+    return $("#reset_url").click(function(e) {
+      e.preventDefault();
+      $("#blog_url").val("<%= Rails.configuration.lkp['base_url']+'/'+current_user.username+'/' %>")
+      $('form').submit();
+    });
+    });
+  </script>
+
+  <div class="form-inputs">
+    <%= f.input :description, as: :text %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :theme, collection: [ "minima", "kasper"], as: :radio_buttons %>
+    <p class="help-block">
+      <a target="_blank" href="/pages/learn_more/#question-how-many-themes-are-there-on-cyobb-">Preview of themes</a>
+    </p>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :email %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :cover_image %>
+    <p class="help-block">
+      Cover image for your blog.
+      <a target="_blank" href="/pages/learn_more/#question-how-to-upload-images-in-posts-and-for-cover-photo-and-for-author-image-">Upload Images</a>
+    </p>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :author_image %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :google_analytics %>
+    <p class="help-block">
+      Google tracking code.
+      <a target="_blank" href="/pages/learn_more/#question-how-to-track-visitors-on-my-blog-by-google-analytics-">How to get id?</a>
+    </p>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :twitter, hint: 'Your twitter username' %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :about ,as: :text,input_html: { id: 'about_box' } %>
+    <p class="help-block">
+      <a target="_blank" href="/pages/learn_more/#question-what-is-markdown-editor-how-to-use-it-">More info about editor</a>
+    </p>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+
+<script>
+  var simplemdeA;
+  setTimeout(function(){
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+       // some code..
+     }else{
+       if (simplemdeA){
+         location.reload()
+       }else{
+        simplemdeA = new SimpleMDE({ element: document.getElementById("about_box") });
+       }
+     }
+    }, 300);
+</script>

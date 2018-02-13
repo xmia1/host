@@ -1,0 +1,28 @@
+---
+#
+# You don't need to edit this file, it's empty on purpose.
+# Edit minima's home layout instead if you wanna make some changes
+# See: https://jekyllrb.com/docs/themes/#overriding-theme-defaults
+#
+layout: default
+---
+
+<div class="home">
+  <h1 class="page-heading">Posts</h1>
+  <ul class="post-list">
+
+    {% for post in paginator.posts %}
+      <li>
+        {% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ site.url }}{{ post.url }}">{{ post.title | escape }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+{% include pagination.html %}
+  <p class="rss-subscribe">subscribe <a href="{{ site.url }}/feed.xml">via RSS</a></p>
+
+</div>

@@ -1,0 +1,14 @@
+development:
+    adapter: postgresql
+    host: localhost
+    username: justinec
+    database: thaipp
+    password: 123456
+
+
+production:
+  adapter: postgresql
+  host: localhost
+  username: justinec
+  database: thaipp
+  password: 123456

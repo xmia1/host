@@ -1,0 +1,27 @@
+# Rails.configuration.payment['merchant_id'] # => production_merchant_id or development_merchant_id
+
+default: &default
+  title: Create your own beautiful Blog
+  description: Automated jekyll github pages build and create a blog with just one button click,write posts ,change settings all at one place.
+  keywords: jekyll,blogs,automate build,github pages,markdown,shell,themes
+  gitusername: justinechacko
+  token: n26XCUdJyudsYJL7NVPY
+  branch: gh-pages
+  default_name: Your awesome title
+  default_email: your-email@domain.com
+  base_url: http://host.justinechacko.in
+  url: www.host.justinechacko.in
+  default_description: You can update description in update blog details page.
+  default_twitter: jekyllrb
+  default_theme: kasper
+  default_about: You can update about page in [Update blog details](http://www.cyobb.com/update_blog) page.
+
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default

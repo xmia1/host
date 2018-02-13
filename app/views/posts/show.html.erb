@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'New Post', new_post_path,{ :class=>"btn btn-primary btn-lg" }  %>
+
+<h3>Name</h3>
+<%= @post.name %>
+
+<h3>Content</h3>
+<div id="content">
+  <%= @post.content %>
+</div>
+  <script>
+  setTimeout(function(){
+    document.getElementById('content').innerHTML =
+      marked(document.getElementById('content').innerHTML);
+   }, 300);
+  </script>
+<div class="padding-little">
+  <%= link_to 'Edit', edit_post_path(@post),{class: "btn btn-link"} %> |
+  <%= link_to 'Back', posts_path, {class: "btn btn-link"} %>
+</div>
