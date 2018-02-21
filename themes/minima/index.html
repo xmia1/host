@@ -22,7 +22,19 @@ layout: default
       </li>
     {% endfor %}
   </ul>
-{% include pagination.html %}
+<nav class="pagination" role="pagination">
+    {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+            <a class="newer-posts" href="{{ site.url }}/" title="Previous Page">&laquo; Newer Posts</a>
+        {% else %}
+            <a class="newer-posts" href="{{ site.url }}/page{{ paginator.previous_page }}/" title="Previous Page">&laquo; Newer Posts</a>
+      {% endif %}
+    {% endif %}
+    <span class="page-number"> Page {{paginator.page}} of {{paginator.total_pages}} </span>
+    {% if paginator.next_page %}
+        <a class="older-posts" href="{{ site.url }}/page{{ paginator.next_page }}/" title="Next Page">Older Posts &raquo;</a>
+    {% endif %}
+</nav>
   <p class="rss-subscribe">subscribe <a href="{{ site.url }}/feed.xml">via RSS</a></p>
 
 </div>
